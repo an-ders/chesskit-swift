@@ -46,6 +46,8 @@ public struct Piece: Codable, Hashable, Sendable {
   public var kind: Kind
   /// The square where this piece is located on the board.
   public var square: Square
+  /// Stores what the original piece kind was, for pawn promotion
+  public let originalKind: Kind
 
   /// Initializes a chess piece with the given kind, color, and square.
   ///
@@ -57,6 +59,7 @@ public struct Piece: Codable, Hashable, Sendable {
     self.kind = kind
     self.color = color
     self.square = square
+	self.originalKind = kind
   }
 
   /// Initializes a chess piece from its FEN notation.
